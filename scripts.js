@@ -1,8 +1,10 @@
 
 const list = document.querySelector('ul')
-let myLi = ''
+const buttonShowAll = document.querySelector('.show-all')
 
-menuOptions.forEach(product => {
+let myLi = ''
+function showAll(){
+menuOptions.forEach((product) => {
     myLi = myLi +
             `
             <li>
@@ -12,7 +14,27 @@ menuOptions.forEach(product => {
             </li>
 
             `
-           list.innerHTML = myLi
+            list.innerHTML = myLi
 });
+} 
 
-console.log(myLi)
+buttonShowAll.addEventListener('click', showAll)
+
+// Map ------------>
+
+const buttonMapAll = document.querySelector('.map-all')
+
+function mapAllItems(){
+    const newPrices = menuOptions.map((product) => ({
+        name: product.name,
+        price: product.price * 0.9,
+        vegan: product.vegan,
+        src: product.src
+    }))
+
+    console.log(newPrices)
+}
+
+
+
+buttonMapAll.addEventListener('click', 'mapAllItems')
