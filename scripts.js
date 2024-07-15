@@ -1,6 +1,9 @@
 const list = document.querySelector('ul')
+const buttonShowAll = document.querySelector('.show-all')
+const buttonMapAll = document.querySelector('.map-all')
 let myLi = ''
 
+function showAll(){
 menuOptions.forEach((product) => {
     myLi = myLi +
         `
@@ -10,6 +13,14 @@ menuOptions.forEach((product) => {
             <p class="item-price">R$ ${product.price}</p>
         </li>
         `
-})
+    })
+    
+    list.innerHTML = myLi
+}
 
-list.innerHTML = myLi
+function mapAllItems(){
+
+}
+
+buttonShowAll.addEventListener('click', showAll)
+buttonMapAll.addEventListener('click', mapAllItems)
