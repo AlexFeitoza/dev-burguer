@@ -19,7 +19,7 @@ menuOptions.forEach((product) => {
 }
 
 function mapAllItems(){
-
+    menuOptions.map(product =>)
 }
 
 buttonShowAll.addEventListener('click', showAll)
